@@ -1,15 +1,9 @@
 # 天气推送脚本
+
 import requests
 import json
 import datetime
 from utils import utils_notify
-
-appID = "wx48ba0057a632e0d0"
-appSecret = "1aeb7c97444291b70a059e643bd11d29"
-openIdList = [
-    "oxtrZ6G0zoTb_CgecWnExwpkUczo",
-    "oxtrZ6N8kQkrlFU1lsXBNm-OZYeI",
-]
 
 def get_weather_json(url):
     resp = requests.get(url)

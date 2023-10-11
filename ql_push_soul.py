@@ -5,9 +5,9 @@ import json
 import datetime
 import math
 from utils import utils_notify
-from config import soul_lists
+from config import config_soul_lists
 
-soul_lists = soul_lists.soul_lists
+soul_lists = config_soul_lists.soul_lists
 start_time = 1696953600 # 2023-10-11 00:00:00
 
 def get_index():
