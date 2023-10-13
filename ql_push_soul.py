@@ -6,6 +6,8 @@ import datetime
 import math
 import random
 from time import sleep
+import time
+import datetime
 
 from utils import utils_notify
 from config import config_soul_lists
@@ -14,11 +16,15 @@ soul_lists = config_soul_lists.soul_lists
 start_time = 1696953600 # 2023-10-11 00:00:00
 
 def wait_random_sec():
-    rand = random.randint(1, 3600*4 - 1)
-    sleep(rand)
+    rand_ts = random.randint(1, 3600*4 - 1)
+    now_ts = time.time()
+    date = datetime.datetime.fromtimestamp(now_ts + rand_ts)
+    format_data = date.strftime('%Y-%m-%d %H:%M:%S')
+    print('next_execute_time: ', format_data, now_ts, rand_ts)
+    sleep(rand_ts)
 
 def get_index():
-    now_ts = int(datetime.datetime.now().timestamp())
+    now_ts = int(time.time())
     diff_ts = now_ts - start_time
     counter = math.floor(diff_ts / 3600 / 12)
     soul_num = len(soul_lists)
