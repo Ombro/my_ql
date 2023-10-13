@@ -35,7 +35,7 @@ def get_index():
 def format_content():
     index = get_index()
     content = soul_lists[index]
-    length = 20
+    length = 19 # 仅适配 ipone13 mini
     result = [content[i:i+length] for i in range(0, len(content), length)]
     return result
 
